@@ -9,6 +9,8 @@ import net.minecraft.commands.Commands;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.entity.items.dsItems;
+
 public class Entity implements ModInitializer {
 	public static final String MOD_ID = "entity";
 
@@ -24,6 +26,8 @@ public class Entity implements ModInitializer {
 					.requires(source -> source.hasPermission(0)) // Только OP (уровень 2+)
 					.executes(context -> executeHeal(context.getSource())));
 		});
+
+		dsItems.init();
 	}
 
 	private int executeHeal(CommandSourceStack source) {
